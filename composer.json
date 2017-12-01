@@ -1,6 +1,7 @@
 {
     "name": "pndata/iraiser-client",
     "type": "library",
+    "minimum-stability": "stable",
     "description": "Client pour l'API iRaiser",
     "authors": [
         {
