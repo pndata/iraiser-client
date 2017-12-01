@@ -2,7 +2,10 @@
 Client pour l'API iRaiser
 
 Exemple :
-```
+
+```php
+<?php
+
 $iraiser = new iRaiser('username', 'apikey');
 
 $query = $iraiser
@@ -12,4 +15,5 @@ $query = $iraiser
           ->toDate('2017-12-01');
 
 $contacts = $query->get();
+
 ```
