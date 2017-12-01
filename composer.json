@@ -1,0 +1,21 @@
+{
+    "name": "pndata/iraiser-client",
+    "description": "Client pour l'API iRaiser",
+    "authors": [
+        {
+            "name": "mpecro",
+            "email": "mpecro@pndata.fr"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Pndata\\iRaiser\\": "src/"
+      }
+    },
+    "require": {
+      "guzzlehttp/guzzle": "6.2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}
