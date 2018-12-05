@@ -2,25 +2,37 @@
 
 namespace Pndata\iRaiser\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Pndata\iRaiser\Client as iRaiser;
 
-class Test extends \PHPUnit_Framework_TestCase {
+class Test extends TestCase
+{
 
-  public function testQueryWithDonations() {
+    public function testQueryWithDonations()
+    {
 
-    $iraiser = new iRaiser('ssvp_api', '4Oz8oMmP');
+        $iraiser = new iRaiser('ssvp_api', '4Oz8oMmP');
 
-    $query = $iraiser
-              ->contacts()
-              ->withDonations()
-              ->fromDate('2017-11-28')
-              ->toDate('2017-12-01');
+        $query = $iraiser
+            ->contacts()
+            ->fromDate('2017-11-28')
+            ->toDate('2017-12-01')
+            ->page(1)
+            ->limit(50)
+            ->withDonations();
 
-    $contacts = $query->get();
+        try {
+            $contacts = $query->get();
+        }
 
-    $this->assertTrue(count($contacts) > 0);
+        catch(\Exception $e) {
+            echo $e->getMessage();
+        }
 
-  }
+        $this->assertTrue(count($contacts) > 0);
+
+    }
 
 }
+
 ?>
